@@ -6,6 +6,12 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		8B7D0AF62CF8A41F001282BB /* TaskFlowCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B7D0AEC2CF8A41E001282BB /* TaskFlowCore.framework */; };
+		8B7D0B012CF8A41F001282BB /* TaskFlowCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B7D0AEC2CF8A41E001282BB /* TaskFlowCore.framework */; };
+		8B7D0B022CF8A41F001282BB /* TaskFlowCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8B7D0AEC2CF8A41E001282BB /* TaskFlowCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		8B7D0ACB2CF8A325001282BB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -21,13 +27,74 @@
 			remoteGlobalIDString = 8B7D0AB92CF8A322001282BB;
 			remoteInfo = TaskFlow;
 		};
+		8B7D0AF72CF8A41F001282BB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8B7D0AB22CF8A321001282BB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8B7D0AEB2CF8A41E001282BB;
+			remoteInfo = TaskFlowCore;
+		};
+		8B7D0AF92CF8A41F001282BB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8B7D0AB22CF8A321001282BB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8B7D0AB92CF8A322001282BB;
+			remoteInfo = TaskFlow;
+		};
+		8B7D0AFF2CF8A41F001282BB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8B7D0AB22CF8A321001282BB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8B7D0AEB2CF8A41E001282BB;
+			remoteInfo = TaskFlowCore;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8B7D0B072CF8A41F001282BB /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				8B7D0B022CF8A41F001282BB /* TaskFlowCore.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		8B7D0ABA2CF8A322001282BB /* TaskFlow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaskFlow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B7D0ACA2CF8A325001282BB /* TaskFlowTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TaskFlowTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B7D0AD42CF8A325001282BB /* TaskFlowUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TaskFlowUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B7D0AEC2CF8A41E001282BB /* TaskFlowCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TaskFlowCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B7D0AF52CF8A41F001282BB /* TaskFlowCoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TaskFlowCoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		8B7D0B032CF8A41F001282BB /* Exceptions for "TaskFlowCore" folder in "TaskFlowCore" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			publicHeaders = (
+				TaskFlowCore.h,
+			);
+			target = 8B7D0AEB2CF8A41E001282BB /* TaskFlowCore */;
+		};
+		8B7D0B0E2CF8A55C001282BB /* Exceptions for "TaskFlowUITests" folder in "TaskFlowUITests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				TaskFlowCoreTests/TaskFlowCoreTests.swift,
+			);
+			target = 8B7D0AD32CF8A325001282BB /* TaskFlowUITests */;
+		};
+		8B7D0B0F2CF8A55C001282BB /* Exceptions for "TaskFlowUITests" folder in "TaskFlowCoreTests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				TaskFlowCoreTests/TaskFlowCoreTests.swift,
+			);
+			target = 8B7D0AF42CF8A41F001282BB /* TaskFlowCoreTests */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		8B7D0ABC2CF8A322001282BB /* TaskFlow */ = {
@@ -42,7 +109,24 @@
 		};
 		8B7D0AD72CF8A325001282BB /* TaskFlowUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				8B7D0B0E2CF8A55C001282BB /* Exceptions for "TaskFlowUITests" folder in "TaskFlowUITests" target */,
+				8B7D0B0F2CF8A55C001282BB /* Exceptions for "TaskFlowUITests" folder in "TaskFlowCoreTests" target */,
+			);
 			path = TaskFlowUITests;
+			sourceTree = "<group>";
+		};
+		8B7D0AED2CF8A41E001282BB /* TaskFlowCore */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				8B7D0B032CF8A41F001282BB /* Exceptions for "TaskFlowCore" folder in "TaskFlowCore" target */,
+			);
+			path = TaskFlowCore;
+			sourceTree = "<group>";
+		};
+		8B7D0B132CF8A63C001282BB /* Resources */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -52,6 +136,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B7D0B012CF8A41F001282BB /* TaskFlowCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,15 +154,32 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8B7D0AE92CF8A41E001282BB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8B7D0AF22CF8A41F001282BB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B7D0AF62CF8A41F001282BB /* TaskFlowCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		8B7D0AB12CF8A321001282BB = {
 			isa = PBXGroup;
 			children = (
+				8B7D0B132CF8A63C001282BB /* Resources */,
 				8B7D0ABC2CF8A322001282BB /* TaskFlow */,
 				8B7D0ACD2CF8A325001282BB /* TaskFlowTests */,
 				8B7D0AD72CF8A325001282BB /* TaskFlowUITests */,
+				8B7D0AED2CF8A41E001282BB /* TaskFlowCore */,
 				8B7D0ABB2CF8A322001282BB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -88,11 +190,23 @@
 				8B7D0ABA2CF8A322001282BB /* TaskFlow.app */,
 				8B7D0ACA2CF8A325001282BB /* TaskFlowTests.xctest */,
 				8B7D0AD42CF8A325001282BB /* TaskFlowUITests.xctest */,
+				8B7D0AEC2CF8A41E001282BB /* TaskFlowCore.framework */,
+				8B7D0AF52CF8A41F001282BB /* TaskFlowCoreTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		8B7D0AE72CF8A41E001282BB /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		8B7D0AB92CF8A322001282BB /* TaskFlow */ = {
@@ -102,13 +216,16 @@
 				8B7D0AB62CF8A322001282BB /* Sources */,
 				8B7D0AB72CF8A322001282BB /* Frameworks */,
 				8B7D0AB82CF8A322001282BB /* Resources */,
+				8B7D0B072CF8A41F001282BB /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				8B7D0B002CF8A41F001282BB /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				8B7D0ABC2CF8A322001282BB /* TaskFlow */,
+				8B7D0B132CF8A63C001282BB /* Resources */,
 			);
 			name = TaskFlow;
 			packageProductDependencies = (
@@ -163,6 +280,50 @@
 			productReference = 8B7D0AD42CF8A325001282BB /* TaskFlowUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		8B7D0AEB2CF8A41E001282BB /* TaskFlowCore */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8B7D0B042CF8A41F001282BB /* Build configuration list for PBXNativeTarget "TaskFlowCore" */;
+			buildPhases = (
+				8B7D0AE72CF8A41E001282BB /* Headers */,
+				8B7D0AE82CF8A41E001282BB /* Sources */,
+				8B7D0AE92CF8A41E001282BB /* Frameworks */,
+				8B7D0AEA2CF8A41E001282BB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				8B7D0AED2CF8A41E001282BB /* TaskFlowCore */,
+			);
+			name = TaskFlowCore;
+			packageProductDependencies = (
+			);
+			productName = TaskFlowCore;
+			productReference = 8B7D0AEC2CF8A41E001282BB /* TaskFlowCore.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		8B7D0AF42CF8A41F001282BB /* TaskFlowCoreTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8B7D0B082CF8A41F001282BB /* Build configuration list for PBXNativeTarget "TaskFlowCoreTests" */;
+			buildPhases = (
+				8B7D0AF12CF8A41F001282BB /* Sources */,
+				8B7D0AF22CF8A41F001282BB /* Frameworks */,
+				8B7D0AF32CF8A41F001282BB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8B7D0AF82CF8A41F001282BB /* PBXTargetDependency */,
+				8B7D0AFA2CF8A41F001282BB /* PBXTargetDependency */,
+			);
+			name = TaskFlowCoreTests;
+			packageProductDependencies = (
+			);
+			productName = TaskFlowCoreTests;
+			productReference = 8B7D0AF52CF8A41F001282BB /* TaskFlowCoreTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -181,6 +342,13 @@
 						TestTargetID = 8B7D0AB92CF8A322001282BB;
 					};
 					8B7D0AD32CF8A325001282BB = {
+						CreatedOnToolsVersion = 16.1;
+						TestTargetID = 8B7D0AB92CF8A322001282BB;
+					};
+					8B7D0AEB2CF8A41E001282BB = {
+						CreatedOnToolsVersion = 16.1;
+					};
+					8B7D0AF42CF8A41F001282BB = {
 						CreatedOnToolsVersion = 16.1;
 						TestTargetID = 8B7D0AB92CF8A322001282BB;
 					};
@@ -203,6 +371,8 @@
 				8B7D0AB92CF8A322001282BB /* TaskFlow */,
 				8B7D0AC92CF8A325001282BB /* TaskFlowTests */,
 				8B7D0AD32CF8A325001282BB /* TaskFlowUITests */,
+				8B7D0AEB2CF8A41E001282BB /* TaskFlowCore */,
+				8B7D0AF42CF8A41F001282BB /* TaskFlowCoreTests */,
 			);
 		};
 /* End PBXProject section */
@@ -223,6 +393,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		8B7D0AD22CF8A325001282BB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8B7D0AEA2CF8A41E001282BB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8B7D0AF32CF8A41F001282BB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -253,6 +437,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8B7D0AE82CF8A41E001282BB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8B7D0AF12CF8A41F001282BB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -265,6 +463,21 @@
 			isa = PBXTargetDependency;
 			target = 8B7D0AB92CF8A322001282BB /* TaskFlow */;
 			targetProxy = 8B7D0AD52CF8A325001282BB /* PBXContainerItemProxy */;
+		};
+		8B7D0AF82CF8A41F001282BB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8B7D0AEB2CF8A41E001282BB /* TaskFlowCore */;
+			targetProxy = 8B7D0AF72CF8A41F001282BB /* PBXContainerItemProxy */;
+		};
+		8B7D0AFA2CF8A41F001282BB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8B7D0AB92CF8A322001282BB /* TaskFlow */;
+			targetProxy = 8B7D0AF92CF8A41F001282BB /* PBXContainerItemProxy */;
+		};
+		8B7D0B002CF8A41F001282BB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8B7D0AEB2CF8A41E001282BB /* TaskFlowCore */;
+			targetProxy = 8B7D0AFF2CF8A41F001282BB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -512,6 +725,106 @@
 			};
 			name = Release;
 		};
+		8B7D0B052CF8A41F001282BB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = Group5.TaskFlowCore;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		8B7D0B062CF8A41F001282BB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = Group5.TaskFlowCore;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		8B7D0B092CF8A41F001282BB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Group5.TaskFlowCoreTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TaskFlow.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TaskFlow";
+			};
+			name = Debug;
+		};
+		8B7D0B0A2CF8A41F001282BB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Group5.TaskFlowCoreTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TaskFlow.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TaskFlow";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -547,6 +860,24 @@
 			buildConfigurations = (
 				8B7D0AE52CF8A325001282BB /* Debug */,
 				8B7D0AE62CF8A325001282BB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8B7D0B042CF8A41F001282BB /* Build configuration list for PBXNativeTarget "TaskFlowCore" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8B7D0B052CF8A41F001282BB /* Debug */,
+				8B7D0B062CF8A41F001282BB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8B7D0B082CF8A41F001282BB /* Build configuration list for PBXNativeTarget "TaskFlowCoreTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8B7D0B092CF8A41F001282BB /* Debug */,
+				8B7D0B0A2CF8A41F001282BB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
