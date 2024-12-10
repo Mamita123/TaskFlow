@@ -6,31 +6,97 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct CreateTodoView: View {
-    @Environment(\.dismiss) var dismiss
-    @Environment(\.modelContext) var context
     
-    @State private var item = ToDoItem()
+    @Environment(\.modelContext) var modelContext
+    @Environment(\.dismiss) var dismiss
+        
+    @Query private var categories: [Category]
+    
+    @State var item = ToDoItem()
+    @State var selectedCategory: Category?
+    
     var body: some View {
         List {
-            TextField("Name", text: $item.title)
-            DatePicker("Choose a date",
-                       selection: .constant(.now))
-            Toggle("Important!", isOn: $item.isCritical)
-            Button("Create"){
-               withAnimation {
-                    context.insert(item)
+            
+            Section("To do title") {
+                TextField("Name", text: $item.title)
+            }
+            
+            Section("General") {
+                DatePicker("Choose a date",
+                           selection: $item.timestamp)
+                Toggle("Important?", isOn: $item.isCritical)
+            }
+            
+            Section("Select A Category") {
                 
+                
+                if categories.isEmpty {
+                    
+                    ContentUnavailableView("No Categories",
+                                           systemImage: "archivebox")
+                    
+                } else {
+                    Picker("", selection: $selectedCategory) {
+                        
+                        ForEach(categories) { category in
+                            Text(category.title)
+                                .tag(category as Category?)
+                        }
+                        
+                        Text("None")
+                            .tag(nil as Category?)
+                    }
+                    .labelsHidden()
+                    .pickerStyle(.inline)
                 }
-                dismiss()
+                
+
+            }
+
+            Section {
+                Button("Create") {
+                    save()
+                    dismiss()
+                }
+            }
+
+        }
+        .navigationTitle("Create ToDo")
+        .toolbar {
+            
+            ToolbarItem(placement: .cancellationAction) {
+                Button("Dismiss") {
+                    dismiss()
+                }
+            }
+            
+            ToolbarItem(placement: .primaryAction) {
+                Button("Done") {
+                    save()
+                    dismiss()
+                }
+                .disabled(item.title.isEmpty)
             }
         }
-        .navigationTitle("Create Task")
+    }
+}
+
+private extension CreateTodoView {
+    
+    func save() {
+        modelContext.insert(item)
+        item.category = selectedCategory
+        selectedCategory?.items?.append(item)
     }
 }
 
 #Preview {
-    CreateTodoView()
-        .modelContainer(for: ToDoItem.self)
+    NavigationStack {
+        CreateTodoView()
+            .modelContainer(for: ToDoItem.self)
+    }
 }
