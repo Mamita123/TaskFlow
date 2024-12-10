@@ -8,6 +8,26 @@
 import SwiftUI
 import SwiftData
 
+enum SortOption: String, CaseIterable {
+    case title
+    case date
+    case category
+}
+
+extension SortOption {
+    
+    var systemImage: String {
+        switch self {
+        case .title:
+            "textformat.size.larger"
+        case .date:
+            "calendar"
+        case .category:
+            "folder"
+        }
+    }
+}
+
 struct ContentView: View {
     
     @Environment(\.modelContext) private var modelContext
@@ -18,10 +38,12 @@ struct ContentView: View {
     @State private var showCreateToDo = false
     @State private var toDoToEdit: ToDoItem?
     
+    @State private var selectedSortOption = SortOption.allCases.first!
+    
     var filteredItems: [ToDoItem] {
         
         if searchQuery.isEmpty {
-            return items
+            return items.sort(on: selectedSortOption)
         }
         
         let filteredItems = items.compactMap { item in
@@ -35,7 +57,7 @@ struct ContentView: View {
             return (titleContainsQuery || categoryTitleContainsQuery) ? item : nil
         }
         
-        return filteredItems
+        return filteredItems.sort(on: selectedSortOption)
         
     }
     
@@ -114,6 +136,7 @@ struct ContentView: View {
                 }
             }
             .navigationTitle("My To Do List")
+            .animation(.easeIn, value: filteredItems)
             .searchable(text: $searchQuery,
                         prompt: "Search for a to do or a category")
             .overlay {
@@ -144,11 +167,26 @@ struct ContentView: View {
                 }
             })
             .toolbar {
+                
                 ToolbarItem(placement: .topBarTrailing) {
-                    Button("New Category") {
-                        showCreateCategory.toggle()
+                    Menu {
+                        Picker("", selection: $selectedSortOption) {
+                            ForEach(SortOption.allCases,
+                                    id: \.rawValue) { option in
+                                Label(option.rawValue.capitalized,
+                                    systemImage: option.systemImage)
+                                    .tag(option)
+                            }
+                        }
+                        .labelsHidden()
+
+                    } label: {
+                        Image(systemName: "ellipsis")
+                            .symbolVariant(.circle)
                     }
+
                 }
+                
             }
             .safeAreaInset(edge: .bottom,
                            alignment: .leading) {
@@ -173,6 +211,24 @@ struct ContentView: View {
     private func delete(item: ToDoItem) {
         withAnimation {
             modelContext.delete(item)
+        }
+    }
+}
+
+private extension [ToDoItem] {
+    
+    func sort(on option: SortOption) -> [ToDoItem] {
+        switch option {
+        case .title:
+            self.sorted(by: { $0.title < $1.title })
+        case .date:
+            self.sorted(by: { $0.timestamp < $1.timestamp })
+        case .category:
+            self.sorted(by: {
+                guard let firstItemTitle = $0.category?.title,
+                      let secondItemTitle = $1.category?.title else { return false }
+                return firstItemTitle < secondItemTitle
+            })
         }
     }
 }
