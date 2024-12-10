@@ -15,6 +15,9 @@ final class ToDoItem{
     var isCritical: Bool
     var isCompleted: Bool
     
+    @Relationship(.unique, inverse: \Category.items)
+        var category: Category?
+    
     init(title: String = "",
          timestamp: Date = .now,
          isCritical: Bool = false,
@@ -23,5 +26,14 @@ final class ToDoItem{
         self.timestamp = timestamp
         self.isCritical = isCritical
         self.isCompleted = isCompleted
+    }
+}
+
+extension ToDoItem {
+    
+    static var dummy: ToDoItem {
+        .init(title: "Item 1",
+              timestamp: .now,
+              isCritical: true)
     }
 }
