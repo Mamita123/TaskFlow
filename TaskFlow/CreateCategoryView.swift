@@ -8,8 +8,6 @@
 import SwiftUI
 import SwiftData
 
-
-
 struct CreateCategoryView: View {
     
     @Environment(\.dismiss) private var dismiss
@@ -20,10 +18,9 @@ struct CreateCategoryView: View {
     
     var body: some View {
         List {
-            Section("Category Title") {
-                TextField("Enter title here",
-                          text: $title)
-                Button("Add Category") {
+            Section(NSLocalizedString("category_title", comment: "Category title")) {
+                TextField(NSLocalizedString("category_title", comment: "Enter title here"), text: $title)
+                Button(NSLocalizedString("add_category_button", comment: "Add Category")) {
                     withAnimation {
                         let category = Category(title: title)
                         modelContext.insert(category)
@@ -34,15 +31,11 @@ struct CreateCategoryView: View {
                 .disabled(title.isEmpty)
             }
             
-            Section("Categories") {
+            Section(NSLocalizedString("categories_section", comment: "Categories section")) {
                 
                 if categories.isEmpty {
-                    
-                    ContentUnavailableView("No Categories",
-                                           systemImage: "archivebox")
-                    
+                    ContentUnavailableView(NSLocalizedString("no_categories", comment: "No Categories"), systemImage: "archivebox")
                 } else {
-                    
                     ForEach(categories) { category in
                         Text(category.title)
                             .swipeActions {
@@ -51,21 +44,17 @@ struct CreateCategoryView: View {
                                         modelContext.delete(category)
                                     }
                                 } label: {
-                                    Label("Delete", systemImage: "trash.fill")
+                                    Label(NSLocalizedString("delete_button", comment: "Delete button label"), systemImage: "trash.fill")
                                 }
                             }
                     }
                 }
-                
-
             }
-            
         }
-        .navigationTitle("Add Category")
+        .navigationTitle(NSLocalizedString("add_category_button", comment: "Add Category"))
         .toolbar {
-            
             ToolbarItem(placement: .cancellationAction) {
-                Button("Dismiss") {
+                Button(NSLocalizedString("dismiss_button", comment: "Dismiss button")) {
                     dismiss()
                 }
             }

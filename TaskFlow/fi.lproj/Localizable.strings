@@ -1,0 +1,32 @@
+/* 
+  Localizable.strings
+  TaskFlow
+
+  Created by Mamita Gurung on 13.12.2024.
+  
+*/
+ 
+"my_todo_list_title" = "Tehtävälistani";
+"search_prompt" = "Etsi tehtävää tai kategoriaa";
+"new_todo_button" = "Uusi tehtävä";
+"delete_button" = "Poista";
+"edit_button" = "Muokkaa";
+"add_category_title" = "Lisää kategoria";
+"dismiss_button" = "Sulje";
+"create_button" = "Luo";
+"done_button" = "Valmis";
+"title" = "Otsikko";
+"date" = "Päivämäärä";
+"category" = "Kategoria";
+"category_title" = "Kategoria Nimi";
+"add_category_button" = "Lisää Kategoria";
+"categories_section" = "Kategoriat";
+"no_categories" = "Ei Kategorioita";
+"dismiss_button" = "Sulje";
+"create_button" = "Luo";
+"update_button" = "Päivitä";
+"to_do_title_section" = "Tehtävän nimi";
+"general_section" = "Yleinen";
+"select_category_section" = "Valitse Kategoria";
+"choose_date" = "Valitse päivämäärä";
+"important_toggle" = "Tärkeä?";
