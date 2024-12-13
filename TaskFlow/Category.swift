@@ -25,17 +25,17 @@ extension Category {
     
     static var defaults: [Category] {
         [
-            .init(title: "🙇🏾‍♂️ Study"),
-            .init(title: "✈️ Travel"),
-            .init(title: "📆 Appointments"),
-            .init(title: "📖 Reading"),
-            .init(title: "🏋️‍♂️ Fitness"),
-            .init(title: "🛒 Shopping"),
-            .init(title: "🍳 Cooking"),
-            .init(title: "💻 Work"),
-            .init(title: "🏠 Home"),
-            .init(title: "🛏️ Relaxation"),
-            .init(title: "🎉 Events")
+            .init(title: NSLocalizedString("study_category", comment: "Study category")),
+            .init(title: NSLocalizedString("travel_category", comment: "Travel category")),
+            .init(title: NSLocalizedString("appointments_category", comment: "Appointments category")),
+            .init(title: NSLocalizedString("reading_category", comment: "Reading category")),
+            .init(title: NSLocalizedString("fitness_category", comment: "Fitness category")),
+            .init(title: NSLocalizedString("shopping_category", comment: "Shopping category")),
+            .init(title: NSLocalizedString("cooking_category", comment: "Cooking category")),
+            .init(title: NSLocalizedString("work_category", comment: "Work category")),
+            .init(title: NSLocalizedString("home_category", comment: "Home category")),
+            .init(title: NSLocalizedString("relaxation_category", comment: "Relaxation category")),
+            .init(title: NSLocalizedString("events_category", comment: "Events category"))
         ]
     }
 }
