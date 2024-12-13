@@ -72,30 +72,6 @@
 		8B7D0AF52CF8A41F001282BB /* TaskFlowCoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TaskFlowCoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		8B7D0B032CF8A41F001282BB /* Exceptions for "TaskFlowCore" folder in "TaskFlowCore" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			publicHeaders = (
-				TaskFlowCore.h,
-			);
-			target = 8B7D0AEB2CF8A41E001282BB /* TaskFlowCore */;
-		};
-		8B7D0B0E2CF8A55C001282BB /* Exceptions for "TaskFlowUITests" folder in "TaskFlowUITests" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				TaskFlowCoreTests/TaskFlowCoreTests.swift,
-			);
-			target = 8B7D0AD32CF8A325001282BB /* TaskFlowUITests */;
-		};
-		8B7D0B0F2CF8A55C001282BB /* Exceptions for "TaskFlowUITests" folder in "TaskFlowCoreTests" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				TaskFlowCoreTests/TaskFlowCoreTests.swift,
-			);
-			target = 8B7D0AF42CF8A41F001282BB /* TaskFlowCoreTests */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		8B7D0ABC2CF8A322001282BB /* TaskFlow */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
@@ -109,19 +85,7 @@
 		};
 		8B7D0AD72CF8A325001282BB /* TaskFlowUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				8B7D0B0E2CF8A55C001282BB /* Exceptions for "TaskFlowUITests" folder in "TaskFlowUITests" target */,
-				8B7D0B0F2CF8A55C001282BB /* Exceptions for "TaskFlowUITests" folder in "TaskFlowCoreTests" target */,
-			);
 			path = TaskFlowUITests;
-			sourceTree = "<group>";
-		};
-		8B7D0AED2CF8A41E001282BB /* TaskFlowCore */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				8B7D0B032CF8A41F001282BB /* Exceptions for "TaskFlowCore" folder in "TaskFlowCore" target */,
-			);
-			path = TaskFlowCore;
 			sourceTree = "<group>";
 		};
 		8B7D0B132CF8A63C001282BB /* Resources */ = {
@@ -179,7 +143,6 @@
 				8B7D0ABC2CF8A322001282BB /* TaskFlow */,
 				8B7D0ACD2CF8A325001282BB /* TaskFlowTests */,
 				8B7D0AD72CF8A325001282BB /* TaskFlowUITests */,
-				8B7D0AED2CF8A41E001282BB /* TaskFlowCore */,
 				8B7D0ABB2CF8A322001282BB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -293,9 +256,6 @@
 			);
 			dependencies = (
 			);
-			fileSystemSynchronizedGroups = (
-				8B7D0AED2CF8A41E001282BB /* TaskFlowCore */,
-			);
 			name = TaskFlowCore;
 			packageProductDependencies = (
 			);
@@ -332,7 +292,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1610;
-				LastUpgradeCheck = 1610;
+				LastUpgradeCheck = 1620;
 				TargetAttributes = {
 					8B7D0AB92CF8A322001282BB = {
 						CreatedOnToolsVersion = 16.1;
@@ -729,6 +689,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -763,6 +724,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;

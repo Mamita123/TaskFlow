@@ -9,12 +9,15 @@ import SwiftUI
 import SwiftData
 @main
 struct TaskFlowApp: App {
+    
+    @AppStorage("isFirstTimeLaunch") private var isFirstTimeLaunch: Bool = false
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
                 // .modelContainer(for: ToDoItem.self)
         }
-        .modelContainer(for: ToDoItem.self)
+        .modelContainer(ItemsContainer.create(shouldCreateDefaults: &isFirstTimeLaunch))
     }
 }
 
