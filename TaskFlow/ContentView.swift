@@ -187,6 +187,14 @@ struct ContentView: View {
 
                 }
                 
+                ToolbarItem(placement: .primaryAction){
+                    Button {
+                        showCreateCategory.toggle()
+                    } label: {
+                        Image(systemName: "plus")
+                    }
+                }
+                
             }
             .safeAreaInset(edge: .bottom,
                            alignment: .leading) {

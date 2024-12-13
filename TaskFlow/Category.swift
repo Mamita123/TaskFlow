@@ -20,3 +20,22 @@ class Category {
         self.title = title
     }
 }
+
+extension Category {
+    
+    static var defaults: [Category] {
+        [
+            .init(title: "🙇🏾‍♂️ Study"),
+            .init(title: "✈️ Travel"),
+            .init(title: "📆 Appointments"),
+            .init(title: "📖 Reading"),
+            .init(title: "🏋️‍♂️ Fitness"),
+            .init(title: "🛒 Shopping"),
+            .init(title: "🍳 Cooking"),
+            .init(title: "💻 Work"),
+            .init(title: "🏠 Home"),
+            .init(title: "🛏️ Relaxation"),
+            .init(title: "🎉 Events")
+        ]
+    }
+}
