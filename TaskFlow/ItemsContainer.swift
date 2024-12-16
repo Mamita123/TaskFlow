@@ -15,14 +15,12 @@ actor ItemsContainer {
         let schema = Schema([Category.self, ToDoItem.self])
         let configuration = ModelConfiguration()
         let container = try! ModelContainer(for: schema, configurations: [configuration])
+        
         if shouldCreateDefaults == false {
             shouldCreateDefaults = true
-            Category.defaults.forEach {
-                container.mainContext.insert($0)
-            }
+            // Optionally, you can handle setup logic here if required, like logging or showing a guide.
         }
 
         return container
     }
-    
 }

@@ -15,71 +15,77 @@ struct CreateTodoView: View {
         
     @Query private var categories: [Category]
     
-    @State var item = ToDoItem()
-    @State var selectedCategory: Category?
-    
+    @State private var title: String = ""
+    @State private var timestamp: Date = Date()
+    @State private var isCritical: Bool = false
+    @State private var selectedCategory: Category?
+
+    // Filtered categories to exclude default ones
+    var userCategories: [Category] {
+        categories.filter { !isDefaultCategory(title: $0.title) }
+    }
+
     var body: some View {
         List {
-            
-            Section("To do title") {
-                TextField("Name", text: $item.title)
+            Section(header: Text(NSLocalizedString("to_do_title", comment: "To Do Title"))) {
+                TextField(
+                    NSLocalizedString("create_todo_prompt", comment: "Enter the title here..."),
+                    text: $title
+                )
             }
             
-            Section("General") {
-                DatePicker("Choose a date",
-                           selection: $item.timestamp)
-                Toggle("Important?", isOn: $item.isCritical)
+            Section(header: Text(NSLocalizedString("general", comment: "General Section"))) {
+                DatePicker(
+                    NSLocalizedString("choose_a_date", comment: "Choose a date"),
+                    selection: $timestamp
+                )
+                Toggle(
+                    NSLocalizedString("important", comment: "Important toggle"),
+                    isOn: $isCritical
+                )
             }
             
-            Section("Select A Category") {
-                
-                
-                if categories.isEmpty {
-                    
-                    ContentUnavailableView("No Categories",
-                                           systemImage: "archivebox")
-                    
+            Section(header: Text(NSLocalizedString("select_a_category", comment: "Select a Category Section"))) {
+                if userCategories.isEmpty {
+                    ContentUnavailableView(
+                        NSLocalizedString("no_categories", comment: "No Categories available"),
+                        systemImage: "archivebox"
+                    )
                 } else {
-                    Picker("", selection: $selectedCategory) {
-                        
-                        ForEach(categories) { category in
-                            Text(category.title)
+                    Picker(NSLocalizedString("category_picker_label", comment: "Category Picker Label"), selection: $selectedCategory) {
+                        ForEach(userCategories) { category in
+                            Text(category.title)  // Display the localized category title directly
                                 .tag(category as Category?)
                         }
-                        
-                        Text("None")
+                        Text(NSLocalizedString("none", comment: "None category"))
                             .tag(nil as Category?)
                     }
                     .labelsHidden()
                     .pickerStyle(.inline)
                 }
-                
-
             }
 
             Section {
-                Button("Create") {
+                Button(NSLocalizedString("create", comment: "Create button")) {
                     save()
                     dismiss()
                 }
+                .disabled(title.isEmpty)
             }
-
         }
-        .navigationTitle("Create ToDo")
+        .navigationTitle(NSLocalizedString("create_todo", comment: "Create ToDo Title"))
         .toolbar {
-            
             ToolbarItem(placement: .cancellationAction) {
-                Button("Dismiss") {
+                Button(NSLocalizedString("dismiss", comment: "Dismiss button")) {
                     dismiss()
                 }
             }
-            
             ToolbarItem(placement: .primaryAction) {
-                Button("Done") {
+                Button(NSLocalizedString("done", comment: "Done button")) {
                     save()
                     dismiss()
                 }
-                .disabled(item.title.isEmpty)
+                .disabled(title.isEmpty)
             }
         }
     }
@@ -88,9 +94,34 @@ struct CreateTodoView: View {
 private extension CreateTodoView {
     
     func save() {
-        modelContext.insert(item)
-        item.category = selectedCategory
-        selectedCategory?.items?.append(item)
+        let newItem = ToDoItem(
+            titleKey: title,  // Use localized string or user-entered text
+            timestamp: timestamp,
+            isCritical: isCritical,
+            isCompleted: false
+        )
+        
+        modelContext.insert(newItem)
+        newItem.category = selectedCategory
+        selectedCategory?.items?.append(newItem)
+    }
+
+    // Function to check if the category title matches the default ones
+    func isDefaultCategory(title: String) -> Bool {
+        let defaultCategoryTitles = [
+            "study_category",
+            "travel_category",
+            "appointments_category",
+            "reading_category",
+            "fitness_category",
+            "shopping_category",
+            "cooking_category",
+            "work_category",
+            "home_category",
+            "relaxation_category",
+            "events_category"
+        ]
+        return defaultCategoryTitles.contains(title)
     }
 }
 
@@ -100,3 +131,5 @@ private extension CreateTodoView {
             .modelContainer(for: ToDoItem.self)
     }
 }
+
+

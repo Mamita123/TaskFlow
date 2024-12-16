@@ -5,6 +5,8 @@
 //  Created by Anish Pun on 9.12.2024.
 //
 
+// CreateCategoryView.swift
+
 import SwiftUI
 import SwiftData
 
@@ -14,21 +16,24 @@ struct CreateCategoryView: View {
     @Environment(\.modelContext) var modelContext
     
     @State private var title: String = ""
-    @Query private var categories: [Category]
+    @Query private var categories: [Category]  // Only fetch user-added categories
     
     var body: some View {
         List {
             Section(NSLocalizedString("category_title", comment: "Category title")) {
-                TextField(NSLocalizedString("category_title", comment: "Enter title here"), text: $title)
+                TextField(NSLocalizedString("category_name_placeholder", comment: "Enter title here"), text: $title)
+                    .padding()
+                
                 Button(NSLocalizedString("add_category_button", comment: "Add Category")) {
                     withAnimation {
-                        let category = Category(title: title)
+                        // Save the title exactly as entered by the user without localization
+                        let category = Category(title: title)  // Use the title as entered by the user
                         modelContext.insert(category)
-                        category.items = []
-                        title = ""
+                        category.items = []  // Initialize the items for the new category
+                        title = ""  // Reset the input field after adding the category
                     }
                 }
-                .disabled(title.isEmpty)
+                .disabled(title.isEmpty)  // Disable the button if the title is empty
             }
             
             Section(NSLocalizedString("categories_section", comment: "Categories section")) {
@@ -36,8 +41,8 @@ struct CreateCategoryView: View {
                 if categories.isEmpty {
                     ContentUnavailableView(NSLocalizedString("no_categories", comment: "No Categories"), systemImage: "archivebox")
                 } else {
-                    ForEach(categories) { category in
-                        Text(category.title)
+                    ForEach(categories, id: \.self) { category in
+                        Text(category.title)  // Directly display the category title
                             .swipeActions {
                                 Button(role: .destructive) {
                                     withAnimation {

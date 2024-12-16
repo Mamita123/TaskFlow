@@ -2,52 +2,75 @@
   Localizable.strings
   TaskFlow
 
-  Created by Hafiz Dakin on 16.12.2024.
+  Created by Mamita Gurung on 16.12.2024.
   
 */
-/* General keys */
-"delete_button" = "Delete";
-"edit_button" = "Edit";
-"my_todo_list_title" = "My To-Do List";
-"search_prompt" = "Search To-Do Items...";
-"new_todo_button" = "New To-Do";
-"language_switch" = "Language";
-"dismiss_button" = "Dismiss";
+/* General */
+"to_do_title" = "Minun Tehtävävirta";
+"name" = "Nimi";
+"search" = "Haku";
+"general" = "Yleiset";
+"choose_a_date" = "Valitse päivämäärä";
+"important" = "Tärkeä?";
+"select_a_category" = "Valitse kategoria";
+"no_categories" = "Ei kategorioita";
+"none" = "Ei mitään";
+"create" = "Luo";
+"create_todo" = "Luo tehtävä";
+"dismiss" = "Sulje";
+"done" = "Valmis";
 
-/* Create Category View */
-"category_title" = "Category Title";
-"add_category_button" = "Add Category";
-"categories_section" = "Categories";
-"no_categories" = "No Categories";
-
-/* Create To-Do View */
-"create_todo_title" = "Create To-Do";
-"create_todo_prompt" = "Enter the title here...";
-"select_date_label" = "Choose a Date";
-"is_important_label" = "Important?";
-"select_category_label" = "Select a Category";
-"create_button" = "Create";
-"done_button" = "Done";
-"no_categories_message" = "No Categories Available";
 
 /* Update To-Do View */
-"update_todo_title" = "Update To-Do";
-"update_button" = "Update";
+"update_todo_title" = "Päivitä tehtävä";
+"update_button" = "Päivitä";
+
+
+/* Create Category View */
+"category_name_placeholder" = "Syötä kategorian nimi";
+"category_title" = "Kategorian nimi";
+"add_category_button" = "Lisää kategoria";
+"categories_section" = "Kategoriat";
+"no_categories" = "Ei kategorioita";
+"delete_button" = "Poista";
+"edit_button" = "Muokkaa";
+
+"dismiss_button" = "Sulje";
+
+
+/* Create To-Do View */
+"create_todo_title" = "Luo Tehtävä";
+"create_todo_prompt" = "Syötä otsikko tähän...";
+"select_date_label" = "Valitse Päivämäärä";
+"is_important_label" = "Tärkeä?";
+"select_category_label" = "Valitse Kategoria";
+"create_button" = "Luo";
+"done_button" = "Valmis";
+"no_categories_message" = "Ei Kategorioita Saatavilla";
+
 
 /* Category Defaults */
-"study_category" = "Study";
-"travel_category" = "Travel";
-"appointments_category" = "Appointments";
-"reading_category" = "Reading";
-"fitness_category" = "Fitness";
-"shopping_category" = "Shopping";
-"cooking_category" = "Cooking";
-"work_category" = "Work";
-"home_category" = "Home";
-"relaxation_category" = "Relaxation";
-"events_category" = "Events";
+"study_category" = "Opiskelu";
+"travel_category" = "Matkustus";
+"appointments_category" = "Tapaamiset";
+"reading_category" = "Luku";
+"fitness_category" = "Kunto";
+"shopping_category" = "Ostokset";
+"cooking_category" = "Ruokakokkaus";
+"work_category" = "Tyo";
+"home_category" = "Koti";
+"relaxation_category" = "Rentoutuminen";
+"events_category" = "Tapahtumat";
+
+
+/* language switch */
+"language_switch" = "Vaihda kieli";
+"language_english" = "Englanti";
+"language_finnish" = "Suomi";
 
 /* Sort Options */
-"title_sort" = "Title";
-"date_sort" = "Date";
-"category_sort" = "Category";
+"sort_title" = "Otsikko";
+"sort_date" = "Päivämäärä";
+"sort_category" = "Kategoria";
+
+

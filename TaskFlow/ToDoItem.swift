@@ -4,25 +4,33 @@
 //
 //  Created by Hafiz Dakin on 4.12.2024.
 //
-
 import Foundation
 import SwiftData
 
 @Model
-final class ToDoItem{
+final class ToDoItem {
     var title: String
     var timestamp: Date
     var isCritical: Bool
     var isCompleted: Bool
     
     @Relationship(.unique, inverse: \Category.items)
-        var category: Category?
+    var category: Category?
     
-    init(title: String = "",
+    // SwiftData backing initializer
+    init(backingData: Data) {
+        self.title = ""
+        self.timestamp = Date()
+        self.isCritical = false
+        self.isCompleted = false
+    }
+
+    // Custom initializer with localization
+    init(titleKey: String,
          timestamp: Date = .now,
          isCritical: Bool = false,
          isCompleted: Bool = false) {
-        self.title = title
+        self.title = NSLocalizedString(titleKey, comment: "Task title")
         self.timestamp = timestamp
         self.isCritical = isCritical
         self.isCompleted = isCompleted
@@ -30,9 +38,8 @@ final class ToDoItem{
 }
 
 extension ToDoItem {
-    
     static var dummy: ToDoItem {
-        .init(title: "Item 1",
+        .init(titleKey: "dummy_task_title",  // Replace with a localized key if needed
               timestamp: .now,
               isCritical: true)
     }

@@ -2,6 +2,70 @@
   Localizable.strings
   TaskFlow
 
-  Created by Hafiz Dakin on 16.12.2024.
+  Created by Mamita Gurung on 16.12.2024.
   
 */
+/* General */
+"to_do_title" = "My Task Flow";
+"name" = "Name";
+"search" = "search";
+"general" = "General";
+"choose_a_date" = "Choose a date";
+"important" = "Important?";
+"select_a_category" = "Select A Category";
+"no_categories" = "No Categories";
+"none" = "None";
+"create" = "Create";
+"create_todo" = "Create ToDo";
+"dismiss" = "Dismiss";
+"done" = "Done";
+
+/* Update To-Do View */
+"update_todo_title" = "Update To-Do";
+"update_button" = "Update";
+
+//* Create Category View */
+"category_name_placeholder" = "Enter category name";
+"category_title" = "Category Title";
+"add_category_button" = "Add Category";
+"categories_section" = "Categories";
+"no_categories" = "No Categories";
+"delete_button" = "Delete";
+"edit_button" = "Edit";
+"dismiss_button" = "Dismiss";
+
+/* Create To-Do View */
+"create_todo_title" = "Create To-Do";
+"create_todo_prompt" = "Enter the title here...";
+"select_date_label" = "Choose a Date";
+"is_important_label" = "Important?";
+"select_category_label" = "Select a Category";
+"create_button" = "Create";
+"done_button" = "Done";
+"no_categories_message" = "No Categories Available";
+
+
+/* Category Defaults */
+"study_category" = "Study";
+"travel_category" = "Travel";
+"appointments_category" = "Appointments";
+"reading_category" = "Reading";
+"fitness_category" = "Fitness";
+"shopping_category" = "Shopping";
+"cooking_category" = "Cooking";
+"work_category" = "Work";
+"home_category" = "Home";
+"relaxation_category" = "Relaxation";
+"events_category" = "Events";
+/* language switch */
+"language_switch" = "Switch Language";
+"language_english" = "English";
+"language_finnish" = "Finnish";
+
+
+/* Sort Options */
+"sort_title" = "Title";
+"sort_date" = "Date";
+"sort_category" = "Category";
+
+
