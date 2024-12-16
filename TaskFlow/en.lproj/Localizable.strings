@@ -1,30 +1,7 @@
-/*
- Localizable.strings
- TaskFlow
- 
- Created by Mamita Gurung on 13.12.2024.
- 
- "my_todo_list_title" = "My To Do List";
- "search_prompt" = "Search for a to do or a category";
- "new_todo_button" = "New ToDo";
- "delete_button" = "Delete";
- "edit_button" = "Edit";
- "add_category_title" = "Add Category";
- "dismiss_button" = "Dismiss";
- "create_button" = "Create";
- "done_button" = "Done";
- "title" = "Title";
- "date" = "Date";
- "category" = "Category";
- "category_title" = "Category Title";
- "add_category_button" = "Add Category";
- "categories_section" = "Categories";
- "no_categories" = "No Categories";
- "dismiss_button" = "Dismiss";
- "create_button" = "Create";
- "update_button" = "Update";
- "to_do_title_section" = "To do title";
- "general_section" = "General";
- "select_category_section" = "Select A Category";
- "choose_date" = "Choose a date";
- "important_toggle" = "Important?";
+/* 
+  Localizable.strings
+  TaskFlow
+
+  Created by Hafiz Dakin on 16.12.2024.
+  
+*/
