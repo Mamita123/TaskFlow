@@ -1,7 +1,639 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "" : {
 
+    },
+    "%@" : {
+
+    },
+    "add_category" : {
+      "comment" : "Button to add a category\nNavigation title for the add category screen",
+      "localizations" : {
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lisää kategoria"
+          }
+        }
+      }
+    },
+    "appointments" : {
+      "comment" : "Appointments category",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "📅 Appointments "
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "📅 Tapaamiset"
+          }
+        }
+      }
+    },
+    "categories" : {
+      "comment" : "Categories section",
+      "localizations" : {
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kategoriat"
+          }
+        }
+      }
+    },
+    "Category" : {
+      "comment" : "Sort option for category",
+      "localizations" : {
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kategoria"
+          }
+        }
+      }
+    },
+    "category_title" : {
+      "comment" : "Category title section",
+      "localizations" : {
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kategorian nimi"
+          }
+        }
+      }
+    },
+    "Choose a date" : {
+      "comment" : "Label for date picker",
+      "localizations" : {
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Valitse päivämäärä"
+          }
+        }
+      }
+    },
+    "choose_date" : {
+      "comment" : "Choose a date label",
+      "localizations" : {
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Valitse päivämäärä"
+          }
+        }
+      }
+    },
+    "cooking" : {
+      "comment" : "Cooking category",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🍳 Cooking"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🍳 Ruoka "
+          }
+        }
+      }
+    },
+    "create" : {
+      "comment" : "Create button title",
+      "localizations" : {
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Luo"
+          }
+        }
+      }
+    },
+    "create_todo" : {
+      "comment" : "Navigation title for create to-do",
+      "localizations" : {
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Luo tehtävä"
+          }
+        }
+      }
+    },
+    "Date" : {
+      "comment" : "Sort option for date",
+      "localizations" : {
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Päivämäärä"
+          }
+        }
+      }
+    },
+    "delete" : {
+      "comment" : "Delete button",
+      "localizations" : {
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Poista"
+          }
+        }
+      }
+    },
+    "Delete" : {
+      "comment" : "Delete action",
+      "localizations" : {
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Poista"
+          }
+        }
+      }
+    },
+    "dismiss" : {
+      "comment" : "Dismiss button\nDismiss button title",
+      "localizations" : {
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Valmis"
+          }
+        }
+      }
+    },
+    "done" : {
+      "comment" : "Done button title",
+      "localizations" : {
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Valmis"
+          }
+        }
+      }
+    },
+    "Edit" : {
+      "comment" : "Edit action",
+      "localizations" : {
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Muokkaa"
+          }
+        }
+      }
+    },
+    "English" : {
+      "comment" : "Language name for English",
+      "localizations" : {
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Englanti"
+          }
+        }
+      }
+    },
+    "enter_title_here" : {
+      "comment" : "Placeholder for title field",
+      "localizations" : {
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kirjoita otsikko tähän"
+          }
+        }
+      }
+    },
+    "events" : {
+      "comment" : "Events category",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🎉 Events "
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🎉 Tapahtumat "
+          }
+        }
+      }
+    },
+    "Finnish" : {
+      "comment" : "Language option for Finnish",
+      "localizations" : {
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Suomi"
+          }
+        }
+      }
+    },
+    "fitness" : {
+      "comment" : "Fitness category",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🏋️‍♂️ Fitness"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🏋️‍♂️ Kuntoilu "
+          }
+        }
+      }
+    },
+    "general" : {
+      "comment" : "General section",
+      "localizations" : {
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yleinen"
+          }
+        }
+      }
+    },
+    "General" : {
+      "comment" : "Section for general settings",
+      "localizations" : {
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yleinen"
+          }
+        }
+      }
+    },
+    "home" : {
+      "comment" : "Home category",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🏠 Home"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🏠 Koti "
+          }
+        }
+      }
+    },
+    "important" : {
+      "comment" : "Important toggle label",
+      "localizations" : {
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tärkeä?"
+          }
+        }
+      }
+    },
+    "Important?" : {
+      "comment" : "Label for toggle to mark as important",
+      "localizations" : {
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tärkeä?"
+          }
+        }
+      }
+    },
+    "Kieli" : {
+      "comment" : "Language heading in Finnish",
+      "localizations" : {
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kieli"
+          }
+        }
+      }
+    },
+    "Language" : {
+      "comment" : "Button label to change language\nLanguage heading in English",
+      "localizations" : {
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kieli"
+          }
+        }
+      }
+    },
+    "My To Do List" : {
+      "comment" : "Title for to-do list view",
+      "localizations" : {
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tehtävälistani"
+          }
+        }
+      }
+    },
+    "name" : {
+      "comment" : "To-do title placeholder",
+      "localizations" : {
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "nimi"
+          }
+        }
+      }
+    },
+    "Name" : {
+      "comment" : "Placeholder text for todo title",
+      "localizations" : {
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nimi"
+          }
+        }
+      }
+    },
+    "New ToDo" : {
+      "comment" : "Button title to create a new to do",
+      "localizations" : {
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uusi tehtävä"
+          }
+        }
+      }
+    },
+    "No Categories" : {
+      "comment" : "Message when there are no categories",
+      "localizations" : {
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ei kategorioita"
+          }
+        }
+      }
+    },
+    "no_categories" : {
+      "comment" : "Message when no categories exist",
+      "localizations" : {
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ei kategorioita"
+          }
+        }
+      }
+    },
+    "none" : {
+      "comment" : "None option in category picker",
+      "localizations" : {
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ei mitään"
+          }
+        }
+      }
+    },
+    "None" : {
+      "comment" : "Option when no category is selected",
+      "localizations" : {
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ei mitään"
+          }
+        }
+      }
+    },
+    "reading" : {
+      "comment" : "Reading category",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "📖 Reading "
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "📖 Lukeminen "
+          }
+        }
+      }
+    },
+    "relaxation" : {
+      "comment" : "Relaxation category",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🧘‍♀️ Relaxation "
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🧘‍♀️ Rentoutuminen "
+          }
+        }
+      }
+    },
+    "Search for a to do or a category" : {
+      "comment" : "Search placeholder",
+      "localizations" : {
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hae tehtävää tai kategoriaa"
+          }
+        }
+      }
+    },
+    "Select A Category" : {
+      "comment" : "Section for category selection",
+      "localizations" : {
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Valitse kategoria"
+          }
+        }
+      }
+    },
+    "select_category" : {
+      "comment" : "Select category section",
+      "localizations" : {
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Valitse kategoria"
+          }
+        }
+      }
+    },
+    "shopping" : {
+      "comment" : "Shopping category",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🛍️ Shopping "
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🛍️ Ostokset "
+          }
+        }
+      }
+    },
+    "study" : {
+      "comment" : "Study category",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "📚 Study"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "📚 Opiskelu "
+          }
+        }
+      }
+    },
+    "Suomi" : {
+      "comment" : "Language option for Finnish in English",
+      "localizations" : {
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Suomi"
+          }
+        }
+      }
+    },
+    "Title" : {
+      "comment" : "Sort option for title",
+      "localizations" : {
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Otsikko"
+          }
+        }
+      }
+    },
+    "To do title" : {
+      "comment" : "Section title for todo title",
+      "localizations" : {
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tehtävän otsikko"
+          }
+        }
+      }
+    },
+    "to_do_title" : {
+      "comment" : "To-do title section",
+      "localizations" : {
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tehtävän otsikko"
+          }
+        }
+      }
+    },
+    "travel" : {
+      "comment" : "Travel category",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "✈️ Travel"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "✈️ Matkustus "
+          }
+        }
+      }
+    },
+    "Update" : {
+      "comment" : "Button title to update todo item",
+      "localizations" : {
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Päivitä"
+          }
+        }
+      }
+    },
+    "Update ToDo" : {
+      "comment" : "Title for the Update ToDo view",
+      "localizations" : {
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Päivitä tehtävä"
+          }
+        }
+      }
+    },
+    "work" : {
+      "comment" : "Work category",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "💼 Work"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "💼 Työ "
+          }
+        }
+      }
+    }
   },
   "version" : "1.0"
 }

@@ -11,17 +11,13 @@ import SwiftData
 actor ItemsContainer {
     
     @MainActor
-    static func create(shouldCreateDefaults: inout Bool) -> ModelContainer {
+    static func create() -> ModelContainer {
         let schema = Schema([Category.self, ToDoItem.self])
         let configuration = ModelConfiguration()
         let container = try! ModelContainer(for: schema, configurations: [configuration])
-        if shouldCreateDefaults == false {
-            shouldCreateDefaults = true
-            Category.defaults.forEach {
-                container.mainContext.insert($0)
-            }
+        Category.defaults.forEach {
+            container.mainContext.insert($0)
         }
-
         return container
     }
     

@@ -7,17 +7,20 @@
 
 import SwiftUI
 import SwiftData
+
 @main
 struct TaskFlowApp: App {
     
-    @AppStorage("isFirstTimeLaunch") private var isFirstTimeLaunch: Bool = false
+    // @AppStorage("isFirstTimeLaunch") private var isFirstTimeLaunch: Bool = false
+    @StateObject private var languageManager = LanguageManager()
+
     
     var body: some Scene {
         WindowGroup {
             ContentView()
-                // .modelContainer(for: ToDoItem.self)
+                .environmentObject(languageManager)
         }
-        .modelContainer(ItemsContainer.create(shouldCreateDefaults: &isFirstTimeLaunch))
+        .modelContainer(ItemsContainer.create())
     }
 }
 

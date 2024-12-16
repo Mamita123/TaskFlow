@@ -17,28 +17,26 @@ struct CreateTodoView: View {
     
     @State var item = ToDoItem()
     @State var selectedCategory: Category?
+    @StateObject private var languageManager = LanguageManager()
     
     var body: some View {
         List {
             
-            Section("To do title") {
-                TextField("Name", text: $item.title)
+            Section(NSLocalizedString("to_do_title", comment: "To-do title section")) {
+                TextField(NSLocalizedString("name", comment: "To-do title placeholder"), text: $item.title)
             }
             
-            Section("General") {
-                DatePicker("Choose a date",
+            Section(NSLocalizedString("general", comment: "General section")) {
+                DatePicker(NSLocalizedString("choose_date", comment: "Choose a date label"),
                            selection: $item.timestamp)
-                Toggle("Important?", isOn: $item.isCritical)
+                Toggle(NSLocalizedString("important", comment: "Important toggle label"), isOn: $item.isCritical)
             }
             
-            Section("Select A Category") {
-                
+            Section(NSLocalizedString("select_category", comment: "Select category section")) {
                 
                 if categories.isEmpty {
-                    
-                    ContentUnavailableView("No Categories",
+                    ContentUnavailableView(NSLocalizedString("no_categories", comment: "Message when no categories exist"),
                                            systemImage: "archivebox")
-                    
                 } else {
                     Picker("", selection: $selectedCategory) {
                         
@@ -47,35 +45,33 @@ struct CreateTodoView: View {
                                 .tag(category as Category?)
                         }
                         
-                        Text("None")
+                        Text(NSLocalizedString("none", comment: "None option in category picker"))
                             .tag(nil as Category?)
                     }
                     .labelsHidden()
                     .pickerStyle(.inline)
                 }
-                
-
             }
 
             Section {
-                Button("Create") {
+                Button(NSLocalizedString("create", comment: "Create button title")) {
                     save()
                     dismiss()
                 }
             }
 
         }
-        .navigationTitle("Create ToDo")
+        .navigationTitle(NSLocalizedString("create_todo", comment: "Navigation title for create to-do"))
         .toolbar {
             
             ToolbarItem(placement: .cancellationAction) {
-                Button("Dismiss") {
+                Button(NSLocalizedString("dismiss", comment: "Dismiss button title")) {
                     dismiss()
                 }
             }
             
             ToolbarItem(placement: .primaryAction) {
-                Button("Done") {
+                Button(NSLocalizedString("done", comment: "Done button title")) {
                     save()
                     dismiss()
                 }
@@ -100,3 +96,4 @@ private extension CreateTodoView {
             .modelContainer(for: ToDoItem.self)
     }
 }
+

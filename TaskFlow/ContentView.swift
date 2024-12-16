@@ -19,17 +19,31 @@ extension SortOption {
     var systemImage: String {
         switch self {
         case .title:
-            "textformat.size.larger"
+            return "textformat.size.larger"
         case .date:
-            "calendar"
+            return "calendar"
         case .category:
-            "folder"
+            return "folder"
+        }
+    }
+    
+    var localizedDescription: String {
+        switch self {
+        case .title:
+            return NSLocalizedString("Title", comment: "Sort option for title")
+        case .date:
+            return NSLocalizedString("Date", comment: "Sort option for date")
+        case .category:
+            return NSLocalizedString("Category", comment: "Sort option for category")
         }
     }
 }
 
 struct ContentView: View {
     
+    @StateObject private var languageManager = LanguageManager()
+   
+
     @Environment(\.modelContext) private var modelContext
     @Query private var items: [ToDoItem]
     
@@ -58,7 +72,6 @@ struct ContentView: View {
         }
         
         return filteredItems.sort(on: selectedSortOption)
-        
     }
     
     var body: some View {
@@ -93,10 +106,9 @@ struct ContentView: View {
                                      .background(Color.blue.opacity(0.1),
                                                  in: RoundedRectangle(cornerRadius: 8,
                                                                       style: .continuous))
-                             }
+                            }
                             
                         }
-                        
                         
                         Spacer()
                         
@@ -105,7 +117,6 @@ struct ContentView: View {
                                 item.isCompleted.toggle()
                             }
                         } label: {
-                            
                             Image(systemName: "checkmark")
                                 .symbolVariant(.circle.fill)
                                 .foregroundStyle(item.isCompleted ? .green : .gray)
@@ -114,31 +125,27 @@ struct ContentView: View {
                         .buttonStyle(.plain)
                     }
                     .swipeActions {
-                        
                         Button(role: .destructive) {
-                            
                             withAnimation {
                                 modelContext.delete(item)
                             }
-                            
                         } label: {
-                            Label("Delete", systemImage: "trash.fill")
+                            Label(NSLocalizedString("Delete", comment: "Delete action"), systemImage: "trash.fill")
                         }
                         
                         Button {
                             toDoToEdit = item
                         } label: {
-                            Label("Edit", systemImage: "pencil")
+                            Label(NSLocalizedString("Edit", comment: "Edit action"), systemImage: "pencil")
                         }
                         .tint(.orange)
-                        
                     }
                 }
             }
-            .navigationTitle("My To Do List")
+            .navigationTitle(NSLocalizedString("My To Do List", comment: "Title for to-do list view"))
             .animation(.easeIn, value: filteredItems)
             .searchable(text: $searchQuery,
-                        prompt: "Search for a to do or a category")
+                        prompt: NSLocalizedString("Search for a to do or a category", comment: "Search placeholder"))
             .overlay {
                 if filteredItems.isEmpty {
                     ContentUnavailableView.search
@@ -167,25 +174,34 @@ struct ContentView: View {
                 }
             })
             .toolbar {
-                
                 ToolbarItem(placement: .topBarTrailing) {
                     Menu {
                         Picker("", selection: $selectedSortOption) {
-                            ForEach(SortOption.allCases,
-                                    id: \.rawValue) { option in
-                                Label(option.rawValue.capitalized,
-                                    systemImage: option.systemImage)
+                            ForEach(SortOption.allCases, id: \.rawValue) { option in
+                                Label(option.localizedDescription, systemImage: option.systemImage)
                                     .tag(option)
                             }
                         }
                         .labelsHidden()
-
                     } label: {
                         Image(systemName: "ellipsis")
                             .symbolVariant(.circle)
                     }
-
                 }
+                
+                // Language switcher menu
+                    ToolbarItem(placement: .topBarTrailing) {
+                        Menu {
+                            Button("English") {
+                                languageManager.switchLanguage(to: "en")
+                            }
+                            Button("Finnish") {
+                                languageManager.switchLanguage(to: "fi")
+                            }
+                        } label: {
+                            Text(NSLocalizedString("Language", comment: "Button label to change language"))
+                        }
+                    }
                 
                 ToolbarItem(placement: .primaryAction){
                     Button {
@@ -196,12 +212,11 @@ struct ContentView: View {
                 }
                 
             }
-            .safeAreaInset(edge: .bottom,
-                           alignment: .leading) {
+            .safeAreaInset(edge: .bottom, alignment: .leading) {
                 Button(action: {
                     showCreateToDo.toggle()
                 }, label: {
-                    Label("New ToDo", systemImage: "plus")
+                    Label(NSLocalizedString("New ToDo", comment: "Button title to create a new to do"), systemImage: "plus")
                         .bold()
                         .font(.title2)
                         .padding(8)
@@ -209,12 +224,11 @@ struct ContentView: View {
                                     in: Capsule())
                         .padding(.leading)
                         .symbolVariant(.circle.fill)
-                    
                 })
-                
             }
         }
     }
+   
     
     private func delete(item: ToDoItem) {
         withAnimation {
@@ -228,11 +242,11 @@ private extension [ToDoItem] {
     func sort(on option: SortOption) -> [ToDoItem] {
         switch option {
         case .title:
-            self.sorted(by: { $0.title < $1.title })
+            return self.sorted(by: { $0.title < $1.title })
         case .date:
-            self.sorted(by: { $0.timestamp < $1.timestamp })
+            return self.sorted(by: { $0.timestamp < $1.timestamp })
         case .category:
-            self.sorted(by: {
+            return self.sorted(by: {
                 guard let firstItemTitle = $0.category?.title,
                       let secondItemTitle = $1.category?.title else { return false }
                 return firstItemTitle < secondItemTitle

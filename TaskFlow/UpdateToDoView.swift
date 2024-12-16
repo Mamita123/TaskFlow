@@ -17,28 +17,26 @@ struct UpdateToDoView: View {
     @State var selectedCategory: Category?
 
     @Bindable var item: ToDoItem
+    @StateObject private var languageManager = LanguageManager()
 
     var body: some View {
         List {
             
-            Section("To do title") {
-                TextField("Name", text: $item.title)
+            Section(NSLocalizedString("To do title", comment: "Section title for todo title")) {
+                TextField(NSLocalizedString("Name", comment: "Placeholder text for todo title"), text: $item.title)
             }
             
-            Section("General") {
-                DatePicker("Choose a date",
+            Section(NSLocalizedString("General", comment: "Section for general settings")) {
+                DatePicker(NSLocalizedString("Choose a date", comment: "Label for date picker"),
                            selection: $item.timestamp)
-                Toggle("Important?", isOn: $item.isCritical)
+                Toggle(NSLocalizedString("Important?", comment: "Label for toggle to mark as important"), isOn: $item.isCritical)
             }
             
-            
-            
-            Section("Select A Category") {
-                
+            Section(NSLocalizedString("Select A Category", comment: "Section for category selection")) {
                 
                 if categories.isEmpty {
                     
-                    ContentUnavailableView("No Categories",
+                    ContentUnavailableView(NSLocalizedString("No Categories", comment: "Message when there are no categories"),
                                            systemImage: "archivebox")
                     
                 } else {
@@ -50,24 +48,22 @@ struct UpdateToDoView: View {
                                 .tag(category as Category?)
                         }
                         
-                        Text("None")
+                        Text(NSLocalizedString("None", comment: "Option when no category is selected"))
                             .tag(nil as Category?)
                     }
                     .labelsHidden()
                     .pickerStyle(.inline)
                 }
-                
-
             }
             
             Section {
-                Button("Update") {
+                Button(NSLocalizedString("Update", comment: "Button title to update todo item")) {
                     item.category = selectedCategory
                     dismiss()
                 }
             }
         }
-        .navigationTitle("Update ToDo")
+        .navigationTitle(NSLocalizedString("Update ToDo", comment: "Title for the Update ToDo view"))
         .onAppear(perform: {
             selectedCategory = item.category
         })
@@ -77,7 +73,6 @@ struct UpdateToDoView: View {
 #Preview {
     UpdateToDoView(item: ToDoItem.dummy)
         .modelContainer(for: ToDoItem.self)
-
 }
 
 

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B3C61232D0DEB9F005D9BD1 /* LanguageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3C61222D0DEB8F005D9BD1 /* LanguageManager.swift */; };
+		8B5959D42D0DDCAB0060960D /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 8B5959D32D0DDCAA0060960D /* Localizable.xcstrings */; };
 		8B7D0AF62CF8A41F001282BB /* TaskFlowCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B7D0AEC2CF8A41E001282BB /* TaskFlowCore.framework */; };
 		8B7D0B012CF8A41F001282BB /* TaskFlowCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B7D0AEC2CF8A41E001282BB /* TaskFlowCore.framework */; };
 		8B7D0B022CF8A41F001282BB /* TaskFlowCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8B7D0AEC2CF8A41E001282BB /* TaskFlowCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -65,6 +67,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8B3C61222D0DEB8F005D9BD1 /* LanguageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageManager.swift; sourceTree = "<group>"; };
+		8B5959D32D0DDCAA0060960D /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		8B7D0ABA2CF8A322001282BB /* TaskFlow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaskFlow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B7D0ACA2CF8A325001282BB /* TaskFlowTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TaskFlowTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B7D0AD42CF8A325001282BB /* TaskFlowUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TaskFlowUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -139,6 +143,8 @@
 		8B7D0AB12CF8A321001282BB = {
 			isa = PBXGroup;
 			children = (
+				8B3C61222D0DEB8F005D9BD1 /* LanguageManager.swift */,
+				8B5959D32D0DDCAA0060960D /* Localizable.xcstrings */,
 				8B7D0B132CF8A63C001282BB /* Resources */,
 				8B7D0ABC2CF8A322001282BB /* TaskFlow */,
 				8B7D0ACD2CF8A325001282BB /* TaskFlowTests */,
@@ -320,6 +326,7 @@
 			knownRegions = (
 				en,
 				Base,
+				fi,
 			);
 			mainGroup = 8B7D0AB12CF8A321001282BB;
 			minimizedProjectReferenceProxies = 1;
@@ -342,6 +349,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B5959D42D0DDCAB0060960D /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -380,6 +388,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B3C61232D0DEB9F005D9BD1 /* LanguageManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -501,6 +510,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -557,6 +567,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
